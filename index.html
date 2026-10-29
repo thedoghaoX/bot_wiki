@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BOT WIKI｜AI 模型實機評測與白話知識庫</title>
+<style>
+body{margin:0;font-family:"Noto Sans CJK TC","PingFang TC","Microsoft JhengHei",sans-serif;background:#f7f7f8;color:#1d1d1f;line-height:1.7}
+header{padding:48px 24px 20px;max-width:980px;margin:auto}
+h1{font-size:2rem;margin:0 0 8px}
+.sub{color:#444;font-size:1.05rem}
+main{max-width:980px;margin:auto;padding:0 24px 64px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:32px}
+a.card{display:block;background:#fff;border-radius:16px;padding:22px;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,.08);border:1px solid #e5e7eb}
+a.card h2{font-size:1.15rem;margin:0 0 8px;color:#0b57d0}
+section{background:#fff;border-radius:16px;padding:24px;margin-bottom:24px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:.95rem}
+th,td{padding:10px 12px;border-bottom:1px solid #eee;text-align:left;vertical-align:top}
+th{background:#f0f4f9;font-weight:600}
+footer{text-align:center;color:#666;font-size:.85rem;padding:24px}
+</style>
+</head>
+<body>
+<header>
+<h1>BOT WIKI｜AI 模型實機評測與白話知識庫</h1>
+<p class="sub">把我們實機跑出來的 AI 模型速度、優缺點、6 大職位省錢搭配法與防鬼打牆工作流，全部用白話文攤開給大家看。</p>
+</header>
+<main>
+<div class="cards">
+<a class="card" href="pages/smith/model-providers-live-benchmark.html"><h2>1. 五大 AI 模型實機評測與職位搭配</h2><p>Claude、Codex、Gemini、Grok 與本地模型的真實回應速度、踩坑提醒與 6 大工作職位黃金組合。</p></a>
+<a class="card" href="pages/smith/agentic-dual-loop-playbook.html"><h2>2. AI 不鬼打牆工作手冊</h2><p>「做事的人不能自己打分數」：切小塊、總工頭帶小弟、去重、固定程式驗收與雙人互審 6 步驟。</p></a>
+<a class="card" href="pages/smith/lmwbot-system-guide.html"><h2>3. LMWBOT 系統白話指南</h2><p>一般版、智慧版（總工頭自動帶小弟）與工程圖版的功能介紹與常見問答。</p></a>
+</div>
+
+<section>
+<h2>五大 AI 模型陣營 CLI 實測速查表（直接攤開）</h2>
+<table>
+<thead><tr><th>模型陣營</th><th>實測回應時間</th><th>最強的地方</th><th>最適合做什麼</th><th>踩坑提醒</th></tr></thead>
+<tbody>
+<tr><td><b>Anthropic Claude</b></td><td>單輪 8~23 秒<br>多輪 45~120 秒</td><td>工具鏈最完整、可直接改檔與跑測試</td><td>架構重構、深度推理、雙人獨立互審</td><td>多輪任務較久，記得設回合上限與逾時</td></tr>
+<tr><td><b>OpenAI GPT Codex</b></td><td>約 15~68 秒</td><td>沙箱安全執行、規格拆解與邊界檢查極準</td><td>拆規格、找邊界漏洞、格式檢查</td><td>預設沙箱可能唯讀，寫檔前先確認權限</td></tr>
+<tr><td><b>Google Gemini CLI</b></td><td>約 12~25 秒</td><td>有免費額度、超長文章閱讀、內建搜尋</td><td>跨檔案廣度掃描、上網查證、長文比對</td><td>同時發太多請求易遇到 429，需設自動重試</td></tr>
+<tr><td><b>xAI Grok</b></td><td>短問答秒級</td><td>唯一具備 X (Twitter) 即時社群與開源情報</td><td>當頂層總指揮、抓第一手社群情報</td><td>額度珍貴，只做決策與情報，粗活交給小弟</td></tr>
+<tr><td><b>本地開源模型 (Ollama)</b></td><td>約 1~5 秒</td><td>0 費用、斷網可用、100% 離線隱私</td><td>語法預檢、遮蔽個資、日常問題初步分流</td><td>複雜系統細節較弱，重要結論需程式複核</td></tr>
+</tbody>
+</table>
+</section>
+</main>
+<footer>BOT WIKI 公開知識庫｜繁體中文白話版</footer>
+</body>
+</html>

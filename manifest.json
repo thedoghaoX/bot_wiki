@@ -1,0 +1,31 @@
+{
+  "schema": "bot_wiki_manifest/1",
+  "repository": "thedoghaoX/bot_wiki",
+  "pages": [
+    {
+      "id": "model-providers-live-benchmark",
+      "title": "五大 AI 模型陣營 CLI 實機評測與 6 大職位黃金組合指南",
+      "category": "模型評測",
+      "author": "smith",
+      "visibility": "public",
+      "canvas": "pages/smith/model_providers_live_benchmark.canvas.tsx",
+      "html": "pages/smith/model-providers-live-benchmark.html",
+      "data": [
+        "shared/model_providers_benchmark.json"
+      ]
+    },
+    {
+      "id": "bot-wiki-hub",
+      "title": "bot_wiki 雙機共用知識庫總覽中控台",
+      "category": "知識庫索引",
+      "author": "smith",
+      "visibility": "internal_sanitized",
+      "canvas": "pages/smith/bot_wiki_hub.canvas.tsx",
+      "html": null,
+      "data": [
+        "shared/os_coverage_summary.json",
+        "shared/model_providers_benchmark.json"
+      ]
+    }
+  ]
+}

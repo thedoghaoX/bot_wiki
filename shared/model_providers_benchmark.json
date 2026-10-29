@@ -1,0 +1,126 @@
+{
+  "schema": "bot_wiki_model_providers_benchmark/1",
+  "note": "實機 CLI 呼叫紀錄去識別化彙整；時間為典型區間，隨版本與網路變動",
+  "providers": [
+    {
+      "key": "claude",
+      "name": "Anthropic Claude",
+      "models": [
+        "claude-opus-5-5",
+        "claude-sonnet-4-6"
+      ],
+      "latency_s": {
+        "single_turn": [
+          8,
+          23
+        ],
+        "multi_turn_tools": [
+          45,
+          120
+        ]
+      }
+    },
+    {
+      "key": "codex",
+      "name": "OpenAI GPT Codex",
+      "models": [
+        "gpt-5.4",
+        "codex exec"
+      ],
+      "latency_s": {
+        "typical": [
+          15,
+          68
+        ]
+      }
+    },
+    {
+      "key": "gemini",
+      "name": "Google Gemini CLI",
+      "models": [
+        "gemini-2.5-pro",
+        "gemini-2.5-flash",
+        "gemini-3-pro-preview"
+      ],
+      "latency_s": {
+        "typical": [
+          12,
+          25
+        ]
+      }
+    },
+    {
+      "key": "grok",
+      "name": "xAI Grok",
+      "models": [
+        "grok"
+      ],
+      "latency_s": null
+    },
+    {
+      "key": "local",
+      "name": "本地開源模型",
+      "models": [
+        "qwen2.5-coder",
+        "deepseek-r1",
+        "llama3"
+      ],
+      "latency_s": {
+        "typical": [
+          1,
+          5
+        ]
+      }
+    }
+  ],
+  "radar_axes": [
+    "工具鏈完整度",
+    "長篇推理深度",
+    "回應速度",
+    "成本友善度",
+    "即時情報力",
+    "離線隱私"
+  ],
+  "radar_scores_editorial": {
+    "claude": [
+      5,
+      5,
+      3,
+      2,
+      2,
+      2
+    ],
+    "codex": [
+      4,
+      4,
+      3,
+      3,
+      2,
+      2
+    ],
+    "gemini": [
+      3,
+      3,
+      4,
+      5,
+      4,
+      2
+    ],
+    "grok": [
+      3,
+      3,
+      4,
+      2,
+      5,
+      2
+    ],
+    "local": [
+      2,
+      2,
+      5,
+      5,
+      1,
+      5
+    ]
+  }
+}

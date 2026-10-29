@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>五大 AI 模型陣營實機評測與 6 大職位黃金組合｜BOT WIKI</title>
+<style>
+body{margin:0;font-family:"Noto Sans CJK TC","PingFang TC","Microsoft JhengHei",sans-serif;background:#f7f7f8;color:#1d1d1f;line-height:1.7}
+.wrap{max-width:960px;margin:auto;padding:40px 24px 64px}
+a{color:#0b57d0}
+section{background:#fff;border-radius:14px;padding:22px;margin:18px 0;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+table{width:100%;border-collapse:collapse;margin-top:10px}
+th,td{padding:10px 12px;border-bottom:1px solid #eee;text-align:left;vertical-align:top}
+th{background:#f0f4f9}
+.tag{display:inline-block;background:#e8f0fe;color:#0b57d0;padding:2px 8px;border-radius:6px;font-size:.85rem;font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+<p><a href="../../index.html">← 回 BOT WIKI 首頁</a></p>
+<h1>五大 AI 模型陣營 CLI 實機評測與 6 大職位黃金組合</h1>
+<p>我們把各家 AI 模型的命令列工具（CLI）接進同一套實測環境，直接攤開真實回應速度、強項、踩坑解法與 6 種工作職位的省錢搭配。</p>
+
+<section>
+<h2>一、五大模型陣營實測總表</h2>
+<table>
+<thead><tr><th>模型陣營</th><th>實測代表模型</th><th>實測回應時間</th><th>核心強項與最適合場景</th><th>實測避坑指南</th></tr></thead>
+<tbody>
+<tr><td><b>Anthropic Claude</b></td><td>claude-opus / claude-sonnet</td><td>單輪 8~23 秒<br>多輪工具 45~120 秒</td><td><span class="tag">架構與互審首選</span><br>工具鏈最完整，適合大範圍重構、長篇推理、一人實作一人獨立審查。</td><td>非互動模式必加回合上限（<code>--max-turns</code>）與 JSON 輸出；檢查檔案是否真的寫入磁碟，不聽模型自述。</td></tr>
+<tr><td><b>OpenAI GPT Codex</b></td><td>gpt-5.4 / codex exec</td><td>約 15~68 秒</td><td><span class="tag">規格拆解與找漏洞</span><br>結構化規格拆解、演算法邊界推導、設計測試突變體極強。</td><td>非 Git 資料夾需加 <code>--skip-git-repo-check</code>；需要改檔時先確認沙箱不是唯讀模式。</td></tr>
+<tr><td><b>Google Gemini CLI</b></td><td>gemini-2.5-pro / flash / 3.5-flash-lite</td><td>約 12~25 秒</td><td><span class="tag">免費層與長文廣度</span><br>具備免費額度、百萬字級長文閱讀、內建 Google 搜尋查證。</td><td>高併發易遇到 429 限流，務必加自動等待重試；背景執行建議走 API Key 環境變數。</td></tr>
+<tr><td><b>xAI Grok</b></td><td>grok</td><td>短問答秒級</td><td><span class="tag">即時情報與總指揮</span><br>唯一具備 X (Twitter) 即時社群情報與開源首發雷達。</td><td>額度珍貴，用來當「頂層總指揮」與抓最新情報，粗重實作交給其他模型跑。</td></tr>
+<tr><td><b>本地開源模型</b></td><td>Ollama (qwen / deepseek / llama)</td><td>約 1~5 秒</td><td><span class="tag">0 成本與離線隱私</span><br>完全免費、斷網可用、敏感資料不必上傳雲端。</td><td>複雜系統細節容易答錯，只做第一線預檢、個資遮蔽與分流，關鍵判斷交給固定腳本或雲端模型。</td></tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>二、6 大工作職位「怎麼配最划算」黃金組合</h2>
+<table>
+<thead><tr><th>工作職位 / 情境</th><th>主力大腦</th><th>協同幫手</th><th>最後把關</th><th>白話工作流說明</th></tr></thead>
+<tbody>
+<tr><td><b>1. 軟體架構與全端工程師</b></td><td>Claude Opus</td><td>Codex + Gemini</td><td>本地模型 + 自動測試腳本</td><td>Claude 拆單並設計架構，Codex 補邊界測試，Gemini 掃跨平台檔案，最後用免費測試腳本驗收。</td></tr>
+<tr><td><b>2. 演算法與自動化驗證工程師</b></td><td>Claude Opus（寫手）</td><td>獨立 Claude Opus（審查官）</td><td>固定 Python 驗收腳本</td><td>寫程式與改考卷徹底分開；獨立審查官開全新視窗只看改動差異與視覺證據圖。</td></tr>
+<tr><td><b>3. 產品經理與技術情報分析師</b></td><td>Grok（X 即時情報）</td><td>Gemini（搜尋查證）</td><td>Claude（決策報告收斂）</td><td>Grok 抓第一手社群動態，Gemini 交叉查證背景，Claude 整理成一頁白話結論。</td></tr>
+<tr><td><b>4. 系統維運與電腦救援幕僚</b></td><td>本地 Ollama</td><td>Claude</td><td>唯讀安全指令白名單</td><td>本地模型離線分流並遮蔽私人紀錄，需要診斷時由 Claude 產生「只看不改」的安全檢查步驟。</td></tr>
+<tr><td><b>5. 資安紅隊與合規稽核人員</b></td><td>Claude</td><td>Codex</td><td>本地離線掃描器</td><td>Claude 把規範寫成檢查規則，Codex 專門造假資料測試規則有沒有漏洞，最後本地離線掃描。</td></tr>
+<tr><td><b>6. 獨立開發者 / 省預算團隊</b></td><td>Gemini 免費層</td><td>本地模型</td><td>Claude（關鍵刀口）</td><td>免費與本地資源處理 80% 日常查詢與小修改，付費額度只花在最難的 20% 核心難題。</td></tr>
+</tbody>
+</table>
+</section>
+</div>
+</body>
+</html>
