@@ -5,7 +5,7 @@ import {
 } from "grok/canvas";
 
 type ProviderKey = "claude" | "codex" | "gemini" | "grok" | "local";
-type RoleKey = "arch" | "algo" | "pm" | "itops" | "redteam" | "indie";
+type RoleKey = "arch" | "algo" | "pm" | "itops" | "redteam" | "indie" | "creator";
 
 const PROVIDERS: Record<ProviderKey, {
   name: string; models: string; latency: string; strength: string; bestFor: string; caution: string;
@@ -22,7 +22,7 @@ const PROVIDERS: Record<ProviderKey, {
     name: "OpenAI GPT Codex",
     models: "gpt-5.4 / codex exec",
     latency: "實測回應約 15s~68s",
-    strength: "支援 --full-auto 與沙箱執行；結構化規格拆解、演算法邊界推導、JSON Schema 稽核極強",
+    strength: "支援 --full-auto 與沙箱執行；結構化規格拆解、演算法邊界推導、JSON 結構規格稽核極強",
     bestFor: "規格拆解、邊界條件推導、紅隊突變體設計與格式稽核",
     caution: "沙箱預設可能為唯讀，需寫檔任務要先確認沙箱模式；非 Git 目錄需加 --skip-git-repo-check",
   },
@@ -115,6 +115,19 @@ const ROLES: Record<RoleKey, {
       { title: "Claude 攻堅", detail: "只在關鍵難題出手，設回合上限控額度" },
     ],
   },
+  creator: {
+    label: "影音與短影音創作者（YouTube / Reels / Shorts / 動畫）",
+    lead: "Claude 分鏡總導演 ＋ Grok / Meta 社群話題雷達",
+    second: "本地 Flux / Playwright 首尾幀 ＋ 互動式 AI 局部改圖 ＋ Whisper / Edge-TTS 語音字幕 ＋ Veo / Sora 刀口點火",
+    gate: "FFmpeg 0 成本音畫同步、-14 LUFS 響度與繁體字幕守門員",
+    why: "生影片點數比文字貴 10~50 倍：先用免費工具定稿分鏡與首尾幀，首尾幀有瑕疵就用互動式局部改圖只修圈選區、圈選外像素一個都不動，繁中標題無痕改字零亂碼；守門員過關才點火，連續兩輪不及格就斷路重寫，最後 16:9 與 9:16 一鍵雙出。",
+    steps: [
+      { title: "話題雷達與分鏡拆單", detail: "Grok 與 Meta 抓爆款話題，Claude 拆成台詞、首尾幀、配音字幕分鏡表" },
+      { title: "首尾幀定稿與互動式局部改圖", detail: "框選或塗抹只改局部、去背換底、繁中無痕改字、橫圖一鍵擴成直圖，全部本地 0 成本" },
+      { title: "0 成本守門員", detail: "秒數、音畫對齊、繁體字型檢查，連續兩輪不及格斷路重寫" },
+      { title: "刀口點火與雙出", detail: "過關才呼叫付費影片模型，-14 LUFS 響度正規化後 16:9 與 9:16 一鍵雙出" },
+    ],
+  },
 };
 
 export default function ModelProvidersLiveBenchmark() {
@@ -125,8 +138,8 @@ export default function ModelProvidersLiveBenchmark() {
 
   return (
     <Page
-      title="五大 AI 模型陣營 CLI 實機評測與 6 大職位黃金組合指南"
-      summary="以實機 CLI 呼叫紀錄整理五大模型陣營的速度、工具鏈與適用場景，並給出 6 種工作職位的最佳搭配。"
+      title="五大 AI 模型陣營 CLI 實機評測與 7 大職位黃金組合指南"
+      summary="以實機 CLI 呼叫紀錄整理五大模型陣營的速度、工具鏈與適用場景，並給出 7 種工作職位的最佳搭配（新增影音與短影音創作者）。"
       sources={["實機 CLI 呼叫紀錄（去識別化彙整）", "各模型商官方 CLI 說明文件"]}
       width="wide"
     >
@@ -135,7 +148,7 @@ export default function ModelProvidersLiveBenchmark() {
           { value: "5", label: "模型陣營", detail: "Claude / Codex / Gemini / Grok / 本地" },
           { value: "1s~5s", label: "最快回應", detail: "本地開源模型", tone: "success" },
           { value: "45s~120s", label: "最長回應", detail: "Claude 多輪工具調用", tone: "warning" },
-          { value: "6", label: "職位黃金組合", detail: "可互動切換" },
+          { value: "7", label: "職位黃金組合", detail: "可互動切換（新增影音創作者）" },
         ]}
       />
 
@@ -202,7 +215,7 @@ export default function ModelProvidersLiveBenchmark() {
         </Callout>
       </Section>
 
-      <Section heading="三、6 大職位黃金組合" caption="切換職位查看推薦陣容與工作流">
+      <Section heading="三、7 大職位黃金組合" caption="切換職位查看推薦陣容與工作流">
         <Segmented
           options={(Object.keys(ROLES) as RoleKey[]).map((k) => ({ value: k, label: ROLES[k].label }))}
           value={role}
@@ -217,7 +230,7 @@ export default function ModelProvidersLiveBenchmark() {
         <Steps steps={r.steps} />
       </Section>
 
-      <Section heading="六大職位一覽" collapsible defaultOpen={false}>
+      <Section heading="七大職位一覽" collapsible defaultOpen={false}>
         <Rows
           rows={(Object.keys(ROLES) as RoleKey[]).map((k) => ({
             title: ROLES[k].label,
