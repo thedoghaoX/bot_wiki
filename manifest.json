@@ -26,6 +26,17 @@
         "shared/os_coverage_summary.json",
         "shared/model_providers_benchmark.json"
       ]
+    },
+    {
+      "id": "dual-loop-reasoning",
+      "title": "Dual-Loop Reasoning: how we work with AI agents",
+      "category": "Workflow",
+      "author": "clone",
+      "visibility": "public",
+      "canvas": null,
+      "html": null,
+      "markdown": "pages/clone/dual-loop-reasoning.md",
+      "data": []
     }
   ]
 }
