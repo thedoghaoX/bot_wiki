@@ -13,7 +13,7 @@ const EDITIONS: Record<EditionKey, {
 }> = {
   basic: {
     name: "基礎版：作業系統一鍵只看不改的檢查",
-    who: "一般電腦使用者、家人長輩、剛接觸命令列的新手",
+    who: "一般電腦使用者、家人長輩、還不熟指令的新手",
     promise: "電腦怪怪的，按一下就知道哪裡出問題，而且保證不亂改你的系統。",
     features: [
       { lead: "診", title: "一鍵只讀檢查", detail: "磁碟滿了、連線被佔住、風扇狂轉、網址打不開等常見問題，只看狀態，不改設定。" },
@@ -39,7 +39,7 @@ const EDITIONS: Record<EditionKey, {
     props: [
       { label: "怎麼記住", value: "只留短篇備忘，不留很長的原始紀錄" },
       { label: "怎麼選擇", value: "看任務難不難、額度還剩多少" },
-      { label: "隱私", value: "敏感內容優先留在本地處理" },
+      { label: "隱私", value: "私人內容優先留在自己電腦" },
     ],
   },
   drawing: {
@@ -127,16 +127,16 @@ export default function LmwbotSystemGuide() {
         />
       </Section>
 
-      <Section heading="智慧版亮點：自動把工作拆開來做" caption="總工頭帶著小弟，拿掉重複並檢查，再由另一個模型獨立檢查">
+      <Section heading="智慧版亮點：自動把工作拆開來做" caption="主力帶著幫手。拿掉重複並檢查。再換別人檢查。">
         <Callout lead="一句話看懂" tone="info">
-          一個總工頭帶著三位不同專長的小弟同時開工，最後還有獨立的人檢查。
+          一個主力帶著三個不同專長的幫手一起做，最後換別人來檢查。
         </Callout>
         <Checklist
           items={[
-            { text: "總工頭自動拆開：複雜需求拆成小工作，同時交給三位專長不同的小弟", done: true },
+            { text: "主力自動拆開：複雜需求拆成小工作，同時交給三個不同專長的幫手", done: true },
             { text: "做完先檢查：自動拿掉重複、確認範圍完整、擋下危險指令，不靠 AI 自己說完成", done: true },
-            { text: "獨立檢查：做和查由兩個互不相干的模型負責，雙方都過才交付", done: true },
-            { text: "白話進度回報：請了幾位小弟、檢查是否通過、檢查者是否放行，一看就懂", done: true },
+            { text: "換別人檢查：做和查由兩個互不相干的 AI 負責，兩邊都過才交付", done: true },
+            { text: "進度用白話：請了幾個幫手、檢查過了沒、有沒有放行", done: true },
           ]}
         />
       </Section>
@@ -148,7 +148,7 @@ export default function LmwbotSystemGuide() {
               { text: "診斷預設唯讀，修改前一定先問", done: true },
               { text: "高風險指令先攔截並白話說明", done: true },
               { text: "介面全繁體中文", done: true },
-              { text: "敏感資料優先在本地處理", done: true },
+              { text: "私人資料優先留在自己電腦", done: true },
             ]}
           />
         </Section>
