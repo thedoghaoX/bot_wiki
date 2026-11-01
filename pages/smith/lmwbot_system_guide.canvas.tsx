@@ -12,13 +12,13 @@ const EDITIONS: Record<EditionKey, {
   props: { label: string; value: string }[];
 }> = {
   basic: {
-    name: "基礎版：作業系統一鍵唯讀診斷",
-    who: "一般電腦使用者、家人長輩、剛接觸終端機的新手",
+    name: "基礎版：作業系統一鍵只看不改的檢查",
+    who: "一般電腦使用者、家人長輩、還不熟指令的新手",
     promise: "電腦怪怪的，按一下就知道哪裡出問題，而且保證不亂改你的系統。",
     features: [
-      { lead: "診", title: "一鍵唯讀診斷", detail: "磁碟爆滿、連接埠被佔用、風扇狂轉、網路解析失敗等常見問題，只讀取狀態不修改設定。" },
+      { lead: "診", title: "一鍵只讀檢查", detail: "磁碟滿了、連線被佔住、風扇狂轉、網址打不開等常見問題，只看狀態，不改設定。" },
       { lead: "譯", title: "白話翻譯", detail: "把系統吐出的英文錯誤訊息與指令結果，翻成看得懂的繁體中文與下一步建議。" },
-      { lead: "防", title: "高風險指令防呆攔截", detail: "遇到「貼上這行指令就能領獎」這類社交工程話術，或刪除、格式化等高風險指令，先攔下並說明風險。" },
+      { lead: "防", title: "危險指令先攔下來", detail: "遇到「貼上這行指令就能領獎」這類騙人話術，或刪除、格式化這類危險指令，先攔下並說明風險。" },
     ],
     props: [
       { label: "支援平台", value: "Windows / macOS / Linux" },
@@ -27,19 +27,19 @@ const EDITIONS: Record<EditionKey, {
     ],
   },
   smart: {
-    name: "智慧版：無感長對話與多模型路由",
+    name: "智慧版：長對話自動變短，並換成合適的模型",
     who: "每天和 AI 長時間協作的工程師、研究人員與內容創作者",
-    promise: "聊得再久也不失憶，額度用在刀口上。",
+    promise: "聊得再久也不失憶，額度用在最難的地方。",
     features: [
-      { lead: "縮", title: "背後無感自動壓縮對話", detail: "對話變長時自動整理重點，保留決策與待辦，丟掉冗長過程。" },
-      { lead: "憶", title: "記憶膠囊提煉", detail: "把每輪工作濃縮成短短十幾行的記憶膠囊，下次開新對話直接接續。" },
-      { lead: "反", title: "夥伴反射", detail: "偵測到重複犯錯或卡關時，主動提醒換方法，而不是一直重試同一招。" },
-      { lead: "路", title: "多模型自動路由", detail: "簡單問題交給本地小模型，困難推理才呼叫雲端大模型，自動省下額度。" },
+      { lead: "縮", title: "自動把對話變短", detail: "對話變長時自動整理重點，保留決定與待辦，丟掉冗長過程。" },
+      { lead: "憶", title: "做成短篇備忘", detail: "把每輪工作濃縮成短短十幾行，下次開新對話直接接續。" },
+      { lead: "反", title: "卡關就提醒換方法", detail: "發現重複犯錯或卡關時，主動提醒換方法，而不是一直重試同一招。" },
+      { lead: "路", title: "換成合適的模型", detail: "簡單問題交給自己電腦上的小模型，困難推理才呼叫雲端大模型，自動省下額度。" },
     ],
     props: [
-      { label: "記憶方式", value: "精簡膠囊，不保存原始長日誌" },
-      { label: "路由依據", value: "任務難度與剩餘額度" },
-      { label: "隱私", value: "敏感內容優先留在本地處理" },
+      { label: "怎麼記住", value: "只留短篇備忘，不留很長的原始紀錄" },
+      { label: "怎麼選擇", value: "看任務難不難、額度還剩多少" },
+      { label: "隱私", value: "私人內容優先留在自己電腦" },
     ],
   },
   drawing: {
@@ -64,8 +64,8 @@ export default function LmwbotSystemGuide() {
   const cur = EDITIONS[ed];
   return (
     <Page
-      title="LMWBOT 跨平台 LLM 外裝甲系統公開指南"
-      summary="幫大型語言模型穿上一層外裝甲：看得懂系統、記得住對話、擋得住危險指令。"
+      title="LMWBOT 跨平台外層保護公開指南"
+      summary="在大型語言模型外面加一層保護：看得懂系統、記得住對話、擋得住危險指令。"
       width="wide"
     >
       <Metrics
@@ -77,7 +77,7 @@ export default function LmwbotSystemGuide() {
         ]}
       />
 
-      <Section heading="什麼是「LLM 外裝甲」？">
+      <Section heading="什麼是外層保護？">
         <Text>
           大型語言模型很聰明，但直接拿來操作電腦會有三個問題：看不懂你的系統狀態、聊久了會失憶、
           被人一騙就可能執行危險指令。LMWBOT 在模型外面加一層防護與輔助，讓 AI 先看清楚、再說清楚、最後才動手。
@@ -106,10 +106,10 @@ export default function LmwbotSystemGuide() {
         <Table
           columns={["能力", "基礎版", "智慧版", "工程圖版"]}
           rows={[
-            ["作業系統唯讀診斷", { text: "有", tone: "success" }, { text: "有", tone: "success" }, { text: "有", tone: "success" }],
+            ["作業系統只看不改的檢查", { text: "有", tone: "success" }, { text: "有", tone: "success" }, { text: "有", tone: "success" }],
             ["白話翻譯與防呆攔截", { text: "有", tone: "success" }, { text: "有", tone: "success" }, { text: "有", tone: "success" }],
-            ["自動壓縮對話與記憶膠囊", "—", { text: "有", tone: "success" }, { text: "有", tone: "success" }],
-            ["多模型自動路由", "—", { text: "有", tone: "success" }, { text: "有", tone: "success" }],
+            ["自動把對話變短，並留下短篇備忘", "—", { text: "有", tone: "success" }, { text: "有", tone: "success" }],
+            ["依難度換成合適的模型", "—", { text: "有", tone: "success" }, { text: "有", tone: "success" }],
             ["工程圖自動化審查", "—", "—", { text: "有", tone: "success" }],
           ]}
         />
@@ -119,7 +119,7 @@ export default function LmwbotSystemGuide() {
         <Bars
           bars={[
             { label: "來路不明的「貼上即修復」指令", value: 5, display: "高" },
-            { label: "遞迴刪除與磁碟格式化", value: 5, display: "高" },
+            { label: "整批刪除與磁碟格式化", value: 5, display: "高" },
             { label: "關閉系統防護或防火牆", value: 4, display: "中高" },
             { label: "下載並直接執行遠端腳本", value: 4, display: "中高" },
             { label: "權限全開的檔案設定", value: 3, display: "中" },
@@ -127,16 +127,16 @@ export default function LmwbotSystemGuide() {
         />
       </Section>
 
-      <Section heading="智慧版亮點：三層智慧派工引擎" caption="主將自動帶小弟 + 去重守門 + 雙模型獨立互審">
-        <Callout lead="一句話秒懂" tone="info">
-          一個總工頭帶著三位不同專長的小弟同時開工，最後還有獨立監工驗收。
+      <Section heading="智慧版亮點：自動把工作拆開來做" caption="主力帶著幫手。拿掉重複並檢查。再換別人檢查。">
+        <Callout lead="一句話看懂" tone="info">
+          一個主力帶著三個不同專長的幫手一起做，最後換別人來檢查。
         </Callout>
         <Checklist
           items={[
-            { text: "總工頭自動拆單：複雜需求拆成小工作，同時派給三位專長不同的小弟", done: true },
-            { text: "守門員把關：自動剔除重複、確認範圍完整、擋下危險指令，不靠 AI 自稱完成", done: true },
-            { text: "獨立監工驗收：實作與審查由兩個互不相干的模型負責，雙方過關才交付", done: true },
-            { text: "白話進度回報：派了幾位小弟、檢查是否通過、審查官是否放行，一看就懂", done: true },
+            { text: "主力自動拆開：複雜需求拆成小工作，同時交給三個不同專長的幫手", done: true },
+            { text: "做完先檢查：自動拿掉重複、確認範圍完整、擋下危險指令，不靠 AI 自己說完成", done: true },
+            { text: "換別人檢查：做和查由兩個互不相干的 AI 負責，兩邊都過才交付", done: true },
+            { text: "進度用白話：請了幾個幫手、檢查過了沒、有沒有放行", done: true },
           ]}
         />
       </Section>
@@ -148,15 +148,15 @@ export default function LmwbotSystemGuide() {
               { text: "診斷預設唯讀，修改前一定先問", done: true },
               { text: "高風險指令先攔截並白話說明", done: true },
               { text: "介面全繁體中文", done: true },
-              { text: "敏感資料優先在本地處理", done: true },
+              { text: "私人資料優先留在自己電腦", done: true },
             ]}
           />
         </Section>
         <Section heading="上手建議">
           <Callout lead="先從基礎版開始" tone="info">
-            先用唯讀診斷熟悉介面，再依需求升級到智慧版或工程圖版。
+            先用只看不改的檢查熟悉介面，再依需求升級到智慧版或工程圖版。
           </Callout>
-          <Status tone="accent">三版本共用同一套外裝甲核心</Status>
+          <Status tone="accent">三個版本共用同一套保護</Status>
         </Section>
       </Grid>
     </Page>

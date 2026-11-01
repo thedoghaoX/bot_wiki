@@ -1,7 +1,7 @@
-# 分身官網引流整合規格（Bot Wiki → 官網）
+# 官網知識庫整合規格（Bot Wiki → 官網）
 
 ## 目的
-讓分身維護的官網能連到公開 Bot Wiki，並把讀者導回官網下載頁。
+讓官網能連到公開 Bot Wiki，並把讀者導回官網下載頁。
 
 ## 入口與連結
 | 位置 | 連結目標 | 文字 |
@@ -23,6 +23,6 @@
 - 只放已公開的成績摘要，不放原始考卷或標準答案。
 
 ## 上架前檢查
-1. `python3 scripts/check_no_jp_font_or_text.py <檔案…>`：`violation_count` 必為 0。
-2. `python3 scripts/precommit_scan.py bot_wiki`：`hits` 必為 0。
+1. 日文字型與字樣掃描、機密與內部字樣掃描：由 smith 在 smith-sync 用正本工具跑，結果必為 0（本庫不放掃描工具）。
+2. 掃描結果附在 PR 留言後才可合併。
 3. 人工抽查一次內部代號關鍵字；推送前取得老闆核准。

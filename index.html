@@ -4,63 +4,57 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BOT WIKI｜AI 模型實機評測與白話知識庫</title>
-<style>
-body{margin:0;font-family:"Noto Sans CJK TC","PingFang TC","Microsoft JhengHei",sans-serif;background:#f7f7f8;color:#1d1d1f;line-height:1.7}
-header{padding:48px 24px 20px;max-width:980px;margin:auto}
-h1{font-size:2rem;margin:0 0 8px}
-.sub{color:#444;font-size:1.05rem}
-main{max-width:980px;margin:auto;padding:0 24px 64px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:32px}
-a.card{display:block;background:#fff;border-radius:16px;padding:22px;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,.08);border:1px solid #e5e7eb}
-a.card h2{font-size:1.15rem;margin:0 0 8px;color:#0b57d0}
-section{background:#fff;border-radius:16px;padding:24px;margin-bottom:24px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:.95rem}
-th,td{padding:10px 12px;border-bottom:1px solid #eee;text-align:left;vertical-align:top}
-th{background:#f0f4f9;font-weight:600}
-footer{text-align:center;color:#666;font-size:.85rem;padding:24px}
-</style>
+<link rel="stylesheet" href="shared/site.css">
 </head>
 <body>
 <header>
 <h1>BOT WIKI｜AI 模型實機評測與白話知識庫</h1>
-<p class="sub">把我們實機跑出來的 AI 模型速度、優缺點、7 大職位省錢搭配法與防鬼打牆工作流，全部用白話文攤開給大家看。</p>
+<p class="sub">AI 的優缺點、七種工作怎麼配，以及怎樣才不會一直重複同一個錯誤。</p>
 </header>
 <main>
-<section style="text-align:center;background:#0b1021;color:#f8fafc;border:1px solid #1e293b">
-<h2 style="margin-top:0;color:#38bdf8">組織高效引擎：多節火箭 100% 完全燃燒剖面圖</h2>
-<p style="color:#cbd5e1;margin:6px 0 14px">頂層抓情報 ➔ 總工頭自動拆單 ➔ 三位專長小弟平行推進 ➔ 0 成本去重止損閥 ➔ 雙燃燒室獨立互審</p>
-<p style="color:#94a3b8;margin:0 0 14px;font-size:.95rem">支援 <b style="color:#f8fafc">一般人日常版</b>、<b style="color:#f8fafc">工程師版</b>、<b style="color:#f8fafc">影音創作者版</b> 三大場景</p>
-<img src="assets/org-efficiency-engine.gif" alt="LMWBOT 組織高效引擎：多節火箭 100% 完全燃燒剖面圖" style="width:100%;max-width:920px;border-radius:12px;display:block;margin:0 auto;box-shadow:0 8px 28px rgba(0,0,0,.45)">
+<section class="hero">
+<h2>組織高效的做法</h2>
+<p>先抓消息，再決定方向。<br>主力把大工作拆開。<br>三個不同專長的幫手一起做。<br>不另花錢。重複的就拿掉，沒進展就停。<br>一個人做，另一個人檢查。</p>
+<p>支援 <b>一般人日常版</b>、<b>工程師版</b>、<b>影音創作者版</b></p>
 </section>
 <div class="cards">
-<a class="card" href="pages/smith/model-providers-live-benchmark.html"><h2>1. 五大 AI 模型實機評測與職位搭配</h2><p>Claude、Codex、Gemini、Grok 與本地模型的真實回應速度、踩坑提醒與 7 大工作職位黃金組合（新增影音與短影音創作者）。</p></a>
-<a class="card" href="pages/smith/agentic-dual-loop-playbook.html"><h2>2. AI 不鬼打牆工作手冊</h2><p>「做事的人不能自己打分數」：切小塊、總工頭帶小弟、去重、固定程式驗收與雙人互審 6 步驟。</p></a>
-<a class="card" href="pages/smith/lmwbot-system-guide.html"><h2>3. LMWBOT 系統白話指南</h2><p>一般版、智慧版（總工頭自動帶小弟）與工程圖版的功能介紹與常見問答。</p></a>
+<a class="card" href="pages/smith/model-providers-live-benchmark.html"><h2>1. 五大 AI 比一比</h2><p>Claude、ChatGPT、Gemini、Grok 和本機小模型。看強項、要注意的地方，以及七種工作怎麼配。</p></a>
+<a class="card" href="pages/smith/agentic-dual-loop-playbook.html"><h2>2. 不要一直重複同一個錯誤</h2><p>做事的人不能自己打分數。切小塊，主力帶幫手，拿掉重複，用固定程式驗收，再換別人檢查。共 6 步。</p></a>
+<a class="card" href="pages/smith/lmwbot-system-guide.html"><h2>3. LMWBOT 系統白話指南</h2><p>一般版、智慧版（主力自動帶幫手）與工程圖版。功能介紹和常見問答。</p></a>
 </div>
 
 <section>
-<h2>五大 AI 模型陣營 CLI 實測速查表（直接攤開）</h2>
+<h2>五大 AI 比一比</h2>
+<div class="table-scroll">
 <table>
-<thead><tr><th>模型陣營</th><th>實測回應時間</th><th>最強的地方</th><th>最適合做什麼</th><th>踩坑提醒</th></tr></thead>
+<thead><tr><th>AI</th><th>最強的地方</th><th>最適合做什麼</th><th>要注意</th></tr></thead>
 <tbody>
-<tr><td><b>Anthropic Claude</b></td><td>單輪 8~23 秒<br>多輪 45~120 秒</td><td>工具鏈最完整、可直接改檔與跑測試</td><td>架構重構、深度推理、雙人獨立互審</td><td>多輪任務較久，記得設回合上限與逾時</td></tr>
-<tr><td><b>OpenAI GPT Codex</b></td><td>約 15~68 秒</td><td>沙箱安全執行、規格拆解與邊界檢查極準</td><td>拆規格、找邊界漏洞、格式檢查</td><td>預設沙箱可能唯讀，寫檔前先確認權限</td></tr>
-<tr><td><b>Google Gemini CLI</b></td><td>約 12~25 秒</td><td>有免費額度、超長文章閱讀、內建搜尋</td><td>跨檔案廣度掃描、上網查證、長文比對</td><td>同時發太多請求易遇到 429，需設自動重試</td></tr>
-<tr><td><b>xAI Grok</b></td><td>短問答秒級</td><td>唯一具備 X (Twitter) 即時社群與開源情報</td><td>當頂層總指揮、抓第一手社群情報</td><td>額度珍貴，只做決策與情報，粗活交給小弟</td></tr>
-<tr><td><b>本地開源模型 (Ollama)</b></td><td>約 1~5 秒</td><td>0 費用、斷網可用、100% 離線隱私</td><td>語法預檢、遮蔽個資、日常問題初步分流</td><td>複雜系統細節較弱，重要結論需程式複核</td></tr>
+<tr><td><b>Claude</b></td><td>能改檔，也能跑測試。</td><td>重做大結構、長篇推理。一個人做，另一個人檢查。</td><td>來回較久。要限制次數，也要設逾時。</td></tr>
+<tr><td><b>ChatGPT</b></td><td>能在受保護的環境裡跑。拆規格、找邊界很準。</td><td>拆規格、找漏洞、檢查格式。</td><td>預設可能不能改檔。改檔前先開權限。</td></tr>
+<tr><td><b>Gemini</b></td><td>有免費額度。能讀很長的文章，也能搜尋。</td><td>一次看很多檔、上網查、比長文。</td><td>問太多次會被暫時拒絕。要等一下再試。</td></tr>
+<tr><td><b>Grok</b></td><td>看得到 Twitter 的最新討論和開源消息。</td><td>抓消息，並做決定。</td><td>額度少。只做決定和情報，費力的工作交給別人。</td></tr>
+<tr><td><b>本機小模型</b></td><td>不花錢。沒網路也能用。資料留在自己電腦。</td><td>先看語法、遮私人資料、日常問題先分開處理。</td><td>複雜問題容易錯。重要結論要再檢查一次。</td></tr>
 </tbody>
 </table>
+</div>
 </section>
 
 <section>
-<h2>新增第 7 組：影音與短影音創作者（YouTube / Reels / Shorts / 動畫）</h2>
+<h2>第 7 種：做 YouTube、短片和動畫的人</h2>
+<div class="table-scroll">
 <table>
-<thead><tr><th>主力大腦</th><th>協同幫手</th><th>最後把關</th><th>為什麼這樣配</th></tr></thead>
+<thead><tr><th>主力</th><th>幫手</th><th>最後把關</th><th>為什麼這樣配</th></tr></thead>
 <tbody>
-<tr><td>Claude 分鏡總導演 ＋ Grok / Meta 社群話題雷達</td><td>本地 Flux / Playwright 首尾幀 ＋ 互動式 AI 局部改圖與繁中無痕改字 ＋ Whisper / Edge-TTS 語音字幕 ＋ Veo / Sora 刀口點火</td><td>FFmpeg 0 成本音畫同步、-14 LUFS 響度與繁體字幕守門員</td><td>生影片點數比文字貴 10~50 倍：先用免費工具定稿分鏡與首尾幀，首尾幀有瑕疵就用互動式 AI 局部改圖只修圈選處（圈外一個像素都不動）、繁中標題無痕改字零亂碼、橫圖一鍵擴成直圖；守門員過關才點火，連續兩輪不及格就斷路重寫，16:9 與 9:16 一鍵雙出。</td></tr>
+<tr>
+<td>Claude 負責拆鏡頭。<br>Grok 抓社群話題。</td>
+<td>本機畫開頭和結尾。<br>只改選到的地方，繁中改字。<br>自動字幕、配音。<br>付費影片留到最後。</td>
+<td>不另花錢。<br>對好聲音和畫面。<br>檢查音量和繁體字幕。</td>
+<td>做影片比寫字貴。<br>先用免費工具把鏡頭定下來。<br>畫面有問題，只改圈到的地方，其他地方不動。<br>繁中標題不要亂碼。橫圖可以變成直圖。<br>檢查過了才做影片。連續兩次不合格，就停下來重寫。<br>16:9 和 9:16 一起輸出。</td>
+</tr>
 </tbody>
 </table>
-<p style="color:#94a3b8;margin:10px 0 0;font-size:.92rem">首尾幀改圖再升級：<b>點哪裡改哪裡</b>（點一下、框一塊、圈一圈自動帶座標標籤進對話框，一句話同時改三處，圈外像素鎖死）、<b>一鍵拆圖層</b>（底圖、主體、文字層分開，標題拖著走還能改字）、<b>本地 0 成本預渲染兩段式</b>（先秒出草稿過品管閘門，滿意才花一次高清點數，重繪幅度鎖 0.35 不抽卡）。</p>
+</div>
+<p class="note">開頭和結尾還可以再調。<br>點一下、框一塊，或圈一圈，就能指定位置。一句話可以同時改三處，其他地方不動。<br>圖可以拆開：底圖、主體、文字分開。標題拖走還能改字。<br>先在自己電腦出草稿。檢查通過、滿意了，才花一次高清。重畫幅度鎖住，結果不亂變。</p>
 </section>
 </main>
 <footer>BOT WIKI 公開知識庫｜繁體中文白話版</footer>

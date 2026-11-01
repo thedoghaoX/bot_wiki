@@ -4,10 +4,10 @@
   "pages": [
     {
       "id": "model-providers-live-benchmark",
-      "title": "五大 AI 模型陣營 CLI 實機評測與 6 大職位黃金組合指南",
+      "title": "五大 AI 比一比，以及七種工作怎麼配",
       "category": "模型評測",
       "author": "smith",
-      "visibility": "public",
+      "visibility": "公開",
       "canvas": "pages/smith/model_providers_live_benchmark.canvas.tsx",
       "html": "pages/smith/model-providers-live-benchmark.html",
       "data": [
@@ -16,27 +16,16 @@
     },
     {
       "id": "bot-wiki-hub",
-      "title": "bot_wiki 雙機共用知識庫總覽中控台",
+      "title": "知識庫總覽",
       "category": "知識庫索引",
       "author": "smith",
-      "visibility": "internal_sanitized",
+      "visibility": "內部",
       "canvas": "pages/smith/bot_wiki_hub.canvas.tsx",
       "html": null,
       "data": [
         "shared/os_coverage_summary.json",
         "shared/model_providers_benchmark.json"
       ]
-    },
-    {
-      "id": "dual-loop-reasoning",
-      "title": "Dual-Loop Reasoning: how we work with AI agents",
-      "category": "Workflow",
-      "author": "clone",
-      "visibility": "public",
-      "canvas": null,
-      "html": null,
-      "markdown": "pages/clone/dual-loop-reasoning.md",
-      "data": []
     }
   ]
 }

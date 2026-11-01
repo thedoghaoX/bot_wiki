@@ -1,7 +1,8 @@
 # bot_wiki 共用設計規範
 
-- 字型：`"Noto Sans CJK TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif`
-- 主題：預設淺色；HTML 以 `prefers-color-scheme: dark` 自動切換深色，並宣告 `color-scheme: light dark`
+- 字型：`"Noto Sans CJK TC", "PingFang TC", "Microsoft JhengHei", sans-serif`
+- 主題：預設淺色，不跟隨系統切換深色。圓角卡片。單欄閱讀寬度不超過 960px。
 - 色彩：主色藍 `#2563eb`、成功綠 `#1a7a41`（淺色底需達 WCAG AA）、警告琥珀 `#b45309`、危險紅 `#b91c1c`
-- Canvas：只用 `grok/canvas` 元件與其內建主題，不自訂顏色
-- 數據：圖表數字一律來自 `shared/*.json`，並在頁面標註「典型區間、隨版本變動」
+- 表格：表頭固定、欄位對齊。數字靠右，單位寫在表頭。窄螢幕橫向捲動，不把欄位擠壞。一個表只講一件事。
+- 互動頁只用內建元件和內建主題，不自訂顏色
+- 數據：沒有倉庫內原始實測紀錄的數字不公開。調校參數不公開。編輯整理的分數和實測分開標示。

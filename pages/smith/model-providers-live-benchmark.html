@@ -3,58 +3,53 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>五大 AI 模型陣營實機評測與 7 大職位黃金組合｜BOT WIKI</title>
-<style>
-body{margin:0;font-family:"Noto Sans CJK TC","PingFang TC","Microsoft JhengHei",sans-serif;background:#f7f7f8;color:#1d1d1f;line-height:1.7}
-.wrap{max-width:960px;margin:auto;padding:40px 24px 64px}
-a{color:#0b57d0}
-section{background:#fff;border-radius:14px;padding:22px;margin:18px 0;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-table{width:100%;border-collapse:collapse;margin-top:10px}
-th,td{padding:10px 12px;border-bottom:1px solid #eee;text-align:left;vertical-align:top}
-th{background:#f0f4f9}
-.tag{display:inline-block;background:#e8f0fe;color:#0b57d0;padding:2px 8px;border-radius:6px;font-size:.85rem;font-weight:600}
-</style>
+<title>五大 AI 比一比｜BOT WIKI</title>
+<link rel="stylesheet" href="../../shared/site.css">
 </head>
 <body>
 <div class="wrap">
 <p><a href="../../index.html">← 回 BOT WIKI 首頁</a></p>
-<h1>五大 AI 模型陣營 CLI 實機評測與 7 大職位黃金組合</h1>
-<p>我們把各家 AI 模型的命令列工具（CLI）接進同一套實測環境，直接攤開真實回應速度、強項、踩坑解法與 7 種工作職位的省錢搭配。</p>
+<h1>五大 AI 比一比</h1>
+<p>各家 AI 接在同一套做法裡。下面是強項、要注意的地方，以及七種工作怎麼配。</p>
 
 <section>
-<h2>一、五大模型陣營實測總表</h2>
+<h2>一、五家 AI</h2>
+<div class="table-scroll">
 <table>
-<thead><tr><th>模型陣營</th><th>實測代表模型</th><th>實測回應時間</th><th>核心強項與最適合場景</th><th>實測避坑指南</th></tr></thead>
+<thead><tr><th>AI</th><th>代表</th><th>強項</th><th>要注意</th></tr></thead>
 <tbody>
-<tr><td><b>Anthropic Claude</b></td><td>claude-opus / claude-sonnet</td><td>單輪 8~23 秒<br>多輪工具 45~120 秒</td><td><span class="tag">架構與互審首選</span><br>工具鏈最完整，適合大範圍重構、長篇推理、一人實作一人獨立審查。</td><td>非互動模式必加回合上限（<code>--max-turns</code>）與 JSON 輸出；檢查檔案是否真的寫入磁碟，不聽模型自述。</td></tr>
-<tr><td><b>OpenAI GPT Codex</b></td><td>gpt-5.4 / codex exec</td><td>約 15~68 秒</td><td><span class="tag">規格拆解與找漏洞</span><br>結構化規格拆解、演算法邊界推導、設計測試突變體極強。</td><td>非 Git 資料夾需加 <code>--skip-git-repo-check</code>；需要改檔時先確認沙箱不是唯讀模式。</td></tr>
-<tr><td><b>Google Gemini CLI</b></td><td>gemini-2.5-pro / flash / 3.5-flash-lite</td><td>約 12~25 秒</td><td><span class="tag">免費層與長文廣度</span><br>具備免費額度、百萬字級長文閱讀、內建 Google 搜尋查證。</td><td>高併發易遇到 429 限流，務必加自動等待重試；背景執行建議走 API Key 環境變數。</td></tr>
-<tr><td><b>xAI Grok</b></td><td>grok</td><td>短問答秒級</td><td><span class="tag">即時情報與總指揮</span><br>唯一具備 X (Twitter) 即時社群情報與開源首發雷達。</td><td>額度珍貴，用來當「頂層總指揮」與抓最新情報，粗重實作交給其他模型跑。</td></tr>
-<tr><td><b>本地開源模型</b></td><td>Ollama (qwen / deepseek / llama)</td><td>約 1~5 秒</td><td><span class="tag">0 成本與離線隱私</span><br>完全免費、斷網可用、敏感資料不必上傳雲端。</td><td>複雜系統細節容易答錯，只做第一線預檢、個資遮蔽與分流，關鍵判斷交給固定腳本或雲端模型。</td></tr>
+<tr><td><b>Claude</b></td><td>Claude</td><td><span class="tag">適合重做大結構</span><br>能改檔，也能跑測試。適合長篇推理。一個人做，另一個人檢查。</td><td>沒有人看著的時候，要限制來回次數。要它交出整理好的結果。檔案要真的存下來，不聽它自己說。</td></tr>
+<tr><td><b>ChatGPT</b></td><td>ChatGPT</td><td><span class="tag">適合拆規格、找漏洞</span><br>能把規格拆開。能找出邊界問題。能設計故意出錯的測試。</td><td>資料夾沒有版本紀錄時，要另外允許它執行。改檔前，先確認不是只能看、不能改。</td></tr>
+<tr><td><b>Gemini</b></td><td>Gemini</td><td><span class="tag">有免費額度，能讀長文</span><br>可以讀很長的文章。也能用 Google 搜尋查證。</td><td>問太多次會被暫時拒絕，要等一下再試。放在背景跑時，先準備好登入。</td></tr>
+<tr><td><b>Grok</b></td><td>Grok</td><td><span class="tag">適合抓最新消息</span><br>看得到 Twitter 的即時討論，以及新開源專案的消息。</td><td>額度少。用來做決定、抓消息。費力的工作交給其他 AI。</td></tr>
+<tr><td><b>本機小模型</b></td><td>本機小模型</td><td><span class="tag">不另花錢，資料留在自己電腦</span><br>完全免費。斷網也能用。私人資料不必上傳。</td><td>複雜細節容易答錯。只先看一遍、遮掉私人資料、先分開處理。重要判斷交給固定程式，或交給雲端 AI。</td></tr>
 </tbody>
 </table>
+</div>
 </section>
 
 <section>
-<h2>二、7 大工作職位「怎麼配最划算」黃金組合</h2>
+<h2>二、七種工作怎麼配</h2>
+<div class="table-scroll">
 <table>
-<thead><tr><th>工作職位 / 情境</th><th>主力大腦</th><th>協同幫手</th><th>最後把關</th><th>白話工作流說明</th></tr></thead>
+<thead><tr><th>你在做什麼</th><th>主力</th><th>幫手</th><th>最後把關</th><th>怎麼做</th></tr></thead>
 <tbody>
-<tr><td><b>1. 軟體架構與全端工程師</b></td><td>Claude Opus</td><td>Codex + Gemini</td><td>本地模型 + 自動測試腳本</td><td>Claude 拆單並設計架構，Codex 補邊界測試，Gemini 掃跨平台檔案，最後用免費測試腳本驗收。</td></tr>
-<tr><td><b>2. 演算法與自動化驗證工程師</b></td><td>Claude Opus（寫手）</td><td>獨立 Claude Opus（審查官）</td><td>固定 Python 驗收腳本</td><td>寫程式與改考卷徹底分開；獨立審查官開全新視窗只看改動差異與視覺證據圖。</td></tr>
-<tr><td><b>3. 產品經理與技術情報分析師</b></td><td>Grok（X 即時情報）</td><td>Gemini（搜尋查證）</td><td>Claude（決策報告收斂）</td><td>Grok 抓第一手社群動態，Gemini 交叉查證背景，Claude 整理成一頁白話結論。</td></tr>
-<tr><td><b>4. 系統維運與電腦救援幕僚</b></td><td>本地 Ollama</td><td>Claude</td><td>唯讀安全指令白名單</td><td>本地模型離線分流並遮蔽私人紀錄，需要診斷時由 Claude 產生「只看不改」的安全檢查步驟。</td></tr>
-<tr><td><b>5. 資安紅隊與合規稽核人員</b></td><td>Claude</td><td>Codex</td><td>本地離線掃描器</td><td>Claude 把規範寫成檢查規則，Codex 專門造假資料測試規則有沒有漏洞，最後本地離線掃描。</td></tr>
-<tr><td><b>6. 獨立開發者 / 省預算團隊</b></td><td>Gemini 免費層</td><td>本地模型</td><td>Claude（關鍵刀口）</td><td>免費與本地資源處理 80% 日常查詢與小修改，付費額度只花在最難的 20% 核心難題。</td></tr>
-<tr><td><b>7. 影音與短影音創作者（YouTube / Reels / Shorts / 動畫）</b></td><td>Claude 分鏡總導演 ＋ Grok / Meta 社群話題雷達</td><td>本地 Flux / Playwright 首尾幀 ＋ 互動式 AI 局部改圖與繁中無痕改字 ＋ Whisper / Edge-TTS 語音字幕 ＋ Veo / Sora 刀口點火</td><td>FFmpeg 0 成本音畫同步、-14 LUFS 響度與繁體字幕守門員</td><td>Grok 與 Meta 抓爆款話題，Claude 拆成台詞／首尾幀／配音字幕分鏡表；免費工具先定稿，首尾幀有瑕疵就用互動式 AI 局部改圖只修圈選處（圈外一個像素都不動）、繁中標題無痕改字零亂碼、橫圖一鍵擴成直圖；守門員檢查秒數、音畫對齊與繁體字型，過關才點火呼叫付費影片模型，最後 16:9 與 9:16 一鍵雙出。</td></tr>
+<tr><td><b>1. 做網站和系統</b></td><td>Claude</td><td>ChatGPT 和 Gemini</td><td>本機小模型，加上自動測試</td><td>Claude 拆開工作並設計結構。ChatGPT 補邊界測試。Gemini 看很多檔案。最後用免費程式驗收。</td></tr>
+<tr><td><b>2. 演算法和自動檢查</b></td><td>Claude（寫的人）</td><td>另一個 Claude（檢查的人）</td><td>固定的檢查程式</td><td>寫程式的人不能改答案。檢查的人另開一輪，只看改了什麼和圖。</td></tr>
+<tr><td><b>3. 產品和情報</b></td><td>Grok</td><td>Gemini</td><td>Claude</td><td>Grok 抓社群上的新消息。Gemini 查證背景。Claude 整理成一頁結論。</td></tr>
+<tr><td><b>4. 電腦維修</b></td><td>本機小模型</td><td>Claude</td><td>只允許看、不允許改</td><td>斷網時先在自己電腦分開處理，並遮掉私人紀錄。需要時，請 Claude 寫出「只看不改」的步驟。</td></tr>
+<tr><td><b>5. 資安和合規</b></td><td>Claude</td><td>ChatGPT</td><td>在自己電腦掃描</td><td>Claude 把規範寫成檢查規則。ChatGPT 造假資料，試規則有沒有洞。最後在自己電腦掃描，資料不外流。</td></tr>
+<tr><td><b>6. 自己做、預算少</b></td><td>Gemini 的免費額度</td><td>本機小模型</td><td>Claude，只處理最難的</td><td>免費和本機處理日常的查詢和小改。付費額度只花在最難的問題。</td></tr>
+<tr><td><b>7. YouTube、短片和動畫</b></td><td>Claude 拆鏡頭。<br>Grok 抓社群話題。</td><td>本機畫開頭和結尾。只改選到的地方。繁中改字。自動字幕和配音。付費影片留到最後。</td><td>不另花錢。對好聲音和畫面。檢查音量和繁體字幕。</td><td>做影片比寫字貴。先用免費工具定稿。畫面有問題，只改圈到的地方，其他地方不動。繁中標題不要亂碼。橫圖可以變成直圖。檢查過了才做影片。16:9 和 9:16 一起輸出。</td></tr>
 </tbody>
 </table>
-<p>首尾幀改圖再升級：<b>點哪裡改哪裡</b>（點一下、框一塊、圈一圈自動帶座標標籤進對話框，一句話同時改三處，圈外像素鎖死）、<b>一鍵拆圖層</b>（底圖、主體、文字層分開，標題拖著走還能改字）、<b>本地 0 成本預渲染兩段式</b>（先秒出草稿過品管閘門，滿意才花一次高清點數，重繪幅度鎖 0.35 不抽卡）。</p>
+</div>
+<p>開頭和結尾還可以再調。<br>點一下、框一塊，或圈一圈，就能指定位置。一句話可以同時改三處，其他地方不動。<br>圖可以拆開：底圖、主體、文字分開。標題拖走還能改字。<br>先在自己電腦出草稿。檢查通過、滿意了，才花一次高清。重畫幅度鎖住，結果不亂變。</p>
 </section>
 
 <section>
-<h2>三、火箭剖面圖支援三大場景</h2>
-<p>同一套「先驗證、後燃燒」的五艙火箭流程，支援 <span class="tag">一般人日常版</span>（辦公省錢防呆）、<span class="tag">工程師版</span>（命令列直接派工、去重與兩輪無進展斷路）與 <span class="tag">影音創作者版</span>（話題雷達 ➔ 分鏡拆單 ➔ 腳本／視覺／語音三組小弟 ➔ 0 成本審片守門員 ➔ 16:9 與 9:16 一鍵雙出）三大場景。</p>
+<h2>三、同一套做法，三種情況</h2>
+<p>先檢查，再正式做。<br><span class="tag">一般人</span> 辦公時省錢，也避免做錯。<br><span class="tag">工程師</span> 把工作直接交出去，拿掉重複的。兩輪沒進展就停。<br><span class="tag">做影片的人</span> 先找話題，再拆成一段一段。腳本、畫面、語音一起做。不另花錢檢查成片。16:9 和 9:16 一起輸出。</p>
 </section>
 </div>
 </body>
