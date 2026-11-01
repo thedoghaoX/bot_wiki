@@ -1,6 +1,6 @@
 {
   "schema": "bot_wiki_model_providers_benchmark/1",
-  "note": "實機 CLI 呼叫紀錄去識別化彙整；時間為典型區間，隨版本與網路變動",
+  "note": "公開版不附回應時間。本倉庫沒有可對照的原始實測紀錄或 ledger，秒數已移除。調校參數不公開。latency_s 全部為 null。radar_scores_editorial 是編輯評分，不是實測秒數。",
   "providers": [
     {
       "key": "claude",
@@ -9,16 +9,7 @@
         "claude-opus-5-5",
         "claude-sonnet-4-6"
       ],
-      "latency_s": {
-        "single_turn": [
-          8,
-          23
-        ],
-        "multi_turn_tools": [
-          45,
-          120
-        ]
-      }
+      "latency_s": null
     },
     {
       "key": "codex",
@@ -27,12 +18,7 @@
         "gpt-5.4",
         "codex exec"
       ],
-      "latency_s": {
-        "typical": [
-          15,
-          68
-        ]
-      }
+      "latency_s": null
     },
     {
       "key": "gemini",
@@ -42,12 +28,7 @@
         "gemini-2.5-flash",
         "gemini-3-pro-preview"
       ],
-      "latency_s": {
-        "typical": [
-          12,
-          25
-        ]
-      }
+      "latency_s": null
     },
     {
       "key": "grok",
@@ -65,12 +46,7 @@
         "deepseek-r1",
         "llama3"
       ],
-      "latency_s": {
-        "typical": [
-          1,
-          5
-        ]
-      }
+      "latency_s": null
     }
   ],
   "radar_axes": [
@@ -82,45 +58,10 @@
     "離線隱私"
   ],
   "radar_scores_editorial": {
-    "claude": [
-      5,
-      5,
-      3,
-      2,
-      2,
-      2
-    ],
-    "codex": [
-      4,
-      4,
-      3,
-      3,
-      2,
-      2
-    ],
-    "gemini": [
-      3,
-      3,
-      4,
-      5,
-      4,
-      2
-    ],
-    "grok": [
-      3,
-      3,
-      4,
-      2,
-      5,
-      2
-    ],
-    "local": [
-      2,
-      2,
-      5,
-      5,
-      1,
-      5
-    ]
+    "claude": [5, 5, 3, 2, 2, 2],
+    "codex": [4, 4, 3, 3, 2, 2],
+    "gemini": [3, 3, 4, 5, 4, 2],
+    "grok": [3, 3, 4, 2, 5, 2],
+    "local": [2, 2, 5, 5, 1, 5]
   }
 }
