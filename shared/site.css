@@ -98,16 +98,15 @@ section,
 }
 
 .table-scroll {
-  overflow-x: auto;
-  overflow-y: clip;
-  -webkit-overflow-scrolling: touch;
+  overflow-x: visible;
   max-width: 100%;
   margin-top: 4px;
 }
 
 table {
   width: 100%;
-  min-width: 880px;
+  min-width: 0;
+  table-layout: fixed;
   border-collapse: separate;
   border-spacing: 0;
   font-size: 0.95rem;
@@ -119,7 +118,22 @@ td {
   border-bottom: 1px solid var(--line);
   text-align: left;
   vertical-align: top;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
+
+/* 四欄：名稱窄一點，其餘均分，文字在欄內換行。 */
+table:not(:has(th:nth-child(5))) :is(th, td):nth-child(1) { width: 16%; }
+table:not(:has(th:nth-child(5))) :is(th, td):nth-child(2) { width: 28%; }
+table:not(:has(th:nth-child(5))) :is(th, td):nth-child(3) { width: 28%; }
+table:not(:has(th:nth-child(5))) :is(th, td):nth-child(4) { width: 28%; }
+
+/* 五欄：說明放最後一欄，給它多一點寬度。 */
+table:has(th:nth-child(5)) :is(th, td):nth-child(1) { width: 18%; }
+table:has(th:nth-child(5)) :is(th, td):nth-child(2) { width: 16%; }
+table:has(th:nth-child(5)) :is(th, td):nth-child(3) { width: 16%; }
+table:has(th:nth-child(5)) :is(th, td):nth-child(4) { width: 18%; }
+table:has(th:nth-child(5)) :is(th, td):nth-child(5) { width: 32%; }
 
 thead th {
   position: sticky;
@@ -127,7 +141,7 @@ thead th {
   z-index: 2;
   background: var(--thead);
   font-weight: 600;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 /* 數字欄靠右。表頭寫單位，儲存格只放數值。 */
@@ -162,9 +176,25 @@ footer {
   padding: 8px 24px 32px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 720px) {
   header,
   main,
   .wrap { padding-left: 16px; padding-right: 16px; }
   h1 { font-size: 1.6rem; }
+
+  .table-scroll {
+    overflow-x: auto;
+    overflow-y: clip;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    width: 720px;
+    min-width: 720px;
+    table-layout: auto;
+  }
+
+  table :is(th, td) { width: auto; }
+
+  thead th { white-space: nowrap; }
 }
