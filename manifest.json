@@ -4,10 +4,10 @@
   "pages": [
     {
       "id": "model-providers-live-benchmark",
-      "title": "五大 AI 模型陣營 CLI 實機評測與 7 大職位黃金組合指南",
+      "title": "五大 AI 模型陣營命令列實機評測與 7 大職位黃金組合指南",
       "category": "模型評測",
       "author": "smith",
-      "visibility": "public",
+      "visibility": "公開",
       "canvas": "pages/smith/model_providers_live_benchmark.canvas.tsx",
       "html": "pages/smith/model-providers-live-benchmark.html",
       "data": [
@@ -16,10 +16,10 @@
     },
     {
       "id": "bot-wiki-hub",
-      "title": "bot_wiki 雙機共用知識庫總覽中控台",
+      "title": "知識庫總覽",
       "category": "知識庫索引",
       "author": "smith",
-      "visibility": "internal_sanitized",
+      "visibility": "內部",
       "canvas": "pages/smith/bot_wiki_hub.canvas.tsx",
       "html": null,
       "data": [

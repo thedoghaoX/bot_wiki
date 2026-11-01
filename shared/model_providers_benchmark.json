@@ -1,67 +1,31 @@
 {
   "schema": "bot_wiki_model_providers_benchmark/1",
-  "note": "公開版不附回應時間。本倉庫沒有可對照的原始實測紀錄或 ledger，秒數已移除。調校參數不公開。latency_s 全部為 null。radar_scores_editorial 是編輯評分，不是實測秒數。",
+  "note": "這份資料沒有附回應時間。",
   "providers": [
     {
       "key": "claude",
       "name": "Anthropic Claude",
-      "models": [
-        "claude-opus-5-5",
-        "claude-sonnet-4-6"
-      ],
-      "latency_s": null
+      "models": ["Opus", "Sonnet"]
     },
     {
       "key": "codex",
       "name": "OpenAI GPT Codex",
-      "models": [
-        "gpt-5.4",
-        "codex exec"
-      ],
-      "latency_s": null
+      "models": ["Codex"]
     },
     {
       "key": "gemini",
-      "name": "Google Gemini CLI",
-      "models": [
-        "gemini-2.5-pro",
-        "gemini-2.5-flash",
-        "gemini-3-pro-preview"
-      ],
-      "latency_s": null
+      "name": "Google Gemini",
+      "models": ["Gemini"]
     },
     {
       "key": "grok",
       "name": "xAI Grok",
-      "models": [
-        "grok"
-      ],
-      "latency_s": null
+      "models": ["Grok"]
     },
     {
       "key": "local",
       "name": "本地開源模型",
-      "models": [
-        "qwen2.5-coder",
-        "deepseek-r1",
-        "llama3"
-      ],
-      "latency_s": null
+      "models": ["Ollama"]
     }
-  ],
-  "radar_axes": [
-    "工具鏈完整度",
-    "長篇推理深度",
-    "回應速度",
-    "成本友善度",
-    "即時情報力",
-    "離線隱私"
-  ],
-  "radar_scores_editorial": {
-    "claude": [5, 5, 3, 2, 2, 2],
-    "codex": [4, 4, 3, 3, 2, 2],
-    "gemini": [3, 3, 4, 5, 4, 2],
-    "grok": [3, 3, 4, 2, 5, 2],
-    "local": [2, 2, 5, 5, 1, 5]
-  }
+  ]
 }
