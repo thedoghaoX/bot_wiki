@@ -34,7 +34,7 @@ const LOOPS: Record<LoopKey, {
   },
   quota: {
     label: "負責指揮的省著用",
-    goal: "最貴的模型只做決定，粗重活交給自己電腦上的命令列小弟，以及不花模型額度的程式。",
+    goal: "最貴的模型只做決定。粗重活交給本機小模型，以及不花額度的程式。",
     rows: [
       { lead: "令", title: "負責指揮的（高階雲端模型）", detail: "只讀精簡的重點紀錄和這一輪摘要，負責把工作拆開、定檢查標準與做最後決定。" },
       { lead: "做", title: "負責做的模型", detail: "照單子做，一次只做一小塊，例如一次最多增加 15 題。" },
@@ -51,12 +51,12 @@ export default function AgenticDualTrackPlaybook() {
   return (
     <Page
       title="做事和檢查分開，檢查不花模型額度"
-      summary="一套負責做，一套獨立檢查。讓程式當裁判、讓模型當工人，避免雲端 AI 讀長了就忘，也避免浪費額度。"
+      summary="一套負責做，另一套負責檢查。程式當裁判，AI 當工人。這樣比較不會讀長了就忘，也不浪費額度。"
       width="wide"
     >
       <Metrics
         metrics={[
-          { value: "2 套", label: "模型分工", detail: "負責做＋獨立檢查" },
+          { value: "2 套", label: "怎麼分工", detail: "一個做，一個檢查" },
           { value: "不花額度", label: "檢查成本", detail: "測試與計分全由程式完成", tone: "success" },
           { value: "2 輪", label: "沒進步就停", detail: "連續兩輪沒有進步就停手", tone: "warning" },
           { value: "≤ 40 行", label: "重點紀錄長度", detail: "細節等需要時再補" },
@@ -133,7 +133,7 @@ export default function AgenticDualTrackPlaybook() {
           <Properties
             items={[
               { label: "誰當裁判", value: "固定程式" },
-              { label: "誰當工人", value: "負責做的模型＋自己電腦上的小弟" },
+              { label: "誰當工人", value: "負責做的模型，加上本機小模型" },
               { label: "誰挑毛病", value: "不共用先前對話的檢查模型" },
               { label: "何時喊停", value: "連續兩輪沒有進步" },
             ]}

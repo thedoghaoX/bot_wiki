@@ -97,4 +97,69 @@
 | Canvas、ledger | 互動頁只用內建元件和內建主題；刪除 ledger 這個詞 | `shared/DESIGN.md` | 7–8 |
 | 圖上的「0 成本秒級預檢」「去重 100% 涵蓋率」 | 不重畫。公開頁不再引用這張圖 | `assets/org-efficiency-engine.gif` | 檔案保留 |
 
-沒有改到的：產品名 LMWBOT、Windows、macOS、Linux、Claude、Codex、Gemini、Grok、Ollama、YouTube、FFmpeg 等一般人認得的名字。版面、配色、表格樣式沒有改。
+上一輪先改到這裡。下一輪把口語和工具英文名再改白話，見下方。產品名留下 LMWBOT、Windows、macOS、Linux、Claude、ChatGPT、Gemini、Grok、YouTube。
+
+## 第二輪：口語和工具名
+
+| 原詞 | 改成 | 檔案 | 行 |
+|---|---|---|---|
+| 鬼打牆 | 一直重複同一個錯誤 | `index.html` | 12、22 |
+| 鬼打牆 | 不要一直重複同一個錯誤 | `README.md` | 1、20、57 |
+| 鬼打牆 | 不要一直重複同一個錯誤 | `pages/smith/agentic-dual-loop-playbook.html` | 6、12 |
+| 總工頭、三位專長小弟、另一位獨立檢查 | 主力、三個幫手、另一個人檢查 | `index.html` | 17 |
+| 總工頭帶小弟 | 主力帶幫手 | `index.html` | 22、23 |
+| 總工頭、小弟 | 主力、幫手 | `README.md` | 10–11、62、75 |
+| 總工頭、三位專長的小弟、獨立的人檢查 | 主力、三個幫手、換別人檢查 | `pages/smith/lmwbot-system-guide.html` | 16 |
+| 總工頭、小弟、獨立檢查 | 主力、幫手、換別人檢查 | `pages/smith/lmwbot_system_guide.canvas.tsx` | 130–139 |
+| 命令列小弟 | 本機小模型 | `pages/smith/agentic_dual_loop_playbook.canvas.tsx` | 37、136 |
+| 模型陣營命令列速查表 | 五大 AI 比一比 | `index.html` | 21、27 |
+| 陣營、命令列、職位、黃金組合 | 五大 AI 比一比，以及七種工作怎麼配 | `pages/smith/model-providers-live-benchmark.html` | 6、12、16、32 |
+| 同上 | 同上 | `manifest.json` | 7 |
+| 同上 | 同上 | `pages/smith/model_providers_live_benchmark.canvas.tsx` | 136–137、143–144、148、197 |
+| 模型陣營（表頭） | AI | `index.html` | 30 |
+| 模型陣營（表頭） | AI | `pages/smith/model-providers-live-benchmark.html` | 19 |
+| 命令列 | 刪除。句子改成各家 AI、把工作直接交出去 | `README.md` | 3、15、27 |
+| 剛接觸命令列 | 還不熟指令 | `pages/smith/lmwbot_system_guide.canvas.tsx` | 16 |
+| 圈外不改 | 其他地方不動。只保留「只改圈到的地方」 | `index.html` | 52、57 |
+| 圈外不改 | 其他地方不動 | `README.md` | 51、53 |
+| 圈外不改 | 其他地方不動 | `pages/smith/model-providers-live-benchmark.html` | 43、47 |
+| 圈外不改 | 其他地方不動 | `pages/smith/model_providers_live_benchmark.canvas.tsx` | 118 |
+| 另一位獨立檢查、獨立檢查 | 另一個人檢查、換別人檢查 | `index.html` | 17 |
+| 獨立檢查 | 換別人檢查 | `pages/smith/agentic-dual-loop-playbook.html` | 18 |
+| Ollama、本地開源模型、本地模型 | 本機小模型 | `index.html` | 36 |
+| 同上 | 本機小模型 | `README.md` | 35 |
+| 同上 | 本機小模型 | `pages/smith/model-providers-live-benchmark.html` | 25、40 |
+| 同上 | 本機小模型 | `pages/smith/lmwbot-system-guide.html` | 13、14、17 |
+| 同上 | 本機小模型 | `shared/model_providers_benchmark.json` | 26–28 |
+| 同上 | 本機小模型 | `pages/smith/model_providers_live_benchmark.canvas.tsx` | 43、55、155 |
+| 同上 | 本機小模型 | `pages/smith/bot_wiki_hub.canvas.tsx` | 16、41 |
+| OpenAI GPT Codex、Codex、gpt-5.4 | ChatGPT | `index.html` | 21、33 |
+| 同上 | ChatGPT | `README.md` | 32、45 |
+| 同上 | ChatGPT | `pages/smith/model-providers-live-benchmark.html` | 22、37 |
+| 同上 | ChatGPT | `shared/model_providers_benchmark.json` | 12–13 |
+| 同上 | ChatGPT | `pages/smith/model_providers_live_benchmark.canvas.tsx` | 21–22、152 |
+| 同上 | ChatGPT | `pages/smith/bot_wiki_hub.canvas.tsx` | 38 |
+| Opus、Sonnet、Anthropic | 只留 Claude | `README.md` | 31 |
+| 同上 | 只留 Claude | `pages/smith/model-providers-live-benchmark.html` | 21 |
+| 同上 | 只留 Claude | `shared/model_providers_benchmark.json` | 7–8 |
+| 同上 | 只留 Claude | `pages/smith/model_providers_live_benchmark.canvas.tsx` | 14–15 |
+| xAI | 刪除，只留 Grok | `pages/smith/bot_wiki_hub.canvas.tsx` | 40 |
+| Flux、Playwright | 本機畫開頭和結尾 | `index.html` | 49 |
+| Whisper、Edge-TTS | 自動字幕、配音 | `index.html` | 49 |
+| Veo、Sora | 付費影片留到最後 | `index.html` | 49 |
+| FFmpeg | 不另花錢，對好聲音和畫面 | `index.html` | 50 |
+| Meta | 刪除。Grok 抓社群話題 | `index.html` | 48 |
+| Reels、Shorts | 短片。YouTube 保留 | `index.html` | 44 |
+| 同上這組工具名 | 同上的白話 | `README.md` | 51 |
+| 同上 | 同上 | `pages/smith/model-providers-live-benchmark.html` | 43 |
+| 同上 | 同上 | `pages/smith/model_providers_live_benchmark.canvas.tsx` | 114–117 |
+| Git | 版本紀錄 | `README.md` | 32 |
+| Git | 版本紀錄 | `pages/smith/model-providers-live-benchmark.html` | 22 |
+| Git | 版本紀錄 | `pages/smith/model_providers_live_benchmark.canvas.tsx` | 25、184 |
+| Python | 檢查程式 | `pages/smith/model_providers_live_benchmark.canvas.tsx` | 65 |
+| 很長的一句 | 拆成短句，意思不變 | `index.html` | 17、48–57 |
+| 很長的一句 | 拆成短句 | `pages/smith/model-providers-live-benchmark.html` | 43、47、52 |
+| 很長的一句 | 拆成短句 | `README.md` | 51、53 |
+
+版面、配色、表格樣式沒有改。公開頁沒有連到這份清單。
+

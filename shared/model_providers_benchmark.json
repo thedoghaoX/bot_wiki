@@ -4,28 +4,28 @@
   "providers": [
     {
       "key": "claude",
-      "name": "Anthropic Claude",
-      "models": ["Opus", "Sonnet"]
+      "name": "Claude",
+      "models": ["Claude"]
     },
     {
       "key": "codex",
-      "name": "OpenAI GPT Codex",
-      "models": ["Codex"]
+      "name": "ChatGPT",
+      "models": ["ChatGPT"]
     },
     {
       "key": "gemini",
-      "name": "Google Gemini",
+      "name": "Gemini",
       "models": ["Gemini"]
     },
     {
       "key": "grok",
-      "name": "xAI Grok",
+      "name": "Grok",
       "models": ["Grok"]
     },
     {
       "key": "local",
-      "name": "本地開源模型",
-      "models": ["Ollama"]
+      "name": "本機小模型",
+      "models": ["本機小模型"]
     }
   ]
 }

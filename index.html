@@ -9,47 +9,52 @@
 <body>
 <header>
 <h1>BOT WIKI｜AI 模型實機評測與白話知識庫</h1>
-<p class="sub">AI 模型的優缺點、7 大職位的省錢搭配，以及防鬼打牆工作流，用白話說明。</p>
+<p class="sub">AI 的優缺點、七種工作怎麼配，以及怎樣才不會一直重複同一個錯誤。</p>
 </header>
 <main>
 <section class="hero">
 <h2>組織高效的做法</h2>
-<p>頂層抓情報 ➔ 總工頭把工作拆開 ➔ 三位專長小弟一起做 ➔ 不另花錢、拿掉重複就停 ➔ 一位做、另一位獨立檢查</p>
+<p>先抓消息，再決定方向。<br>主力把大工作拆開。<br>三個不同專長的幫手一起做。<br>不另花錢。重複的就拿掉，沒進展就停。<br>一個人做，另一個人檢查。</p>
 <p>支援 <b>一般人日常版</b>、<b>工程師版</b>、<b>影音創作者版</b></p>
 </section>
 <div class="cards">
-<a class="card" href="pages/smith/model-providers-live-benchmark.html"><h2>1. 五大 AI 模型實機評測與職位搭配</h2><p>Claude、Codex、Gemini、Grok 與本地模型的強項、踩坑提醒，以及 7 大工作職位黃金組合（新增影音與短影音創作者）。</p></a>
-<a class="card" href="pages/smith/agentic-dual-loop-playbook.html"><h2>2. AI 不鬼打牆工作手冊</h2><p>「做事的人不能自己打分數」：切小塊、總工頭帶小弟、拿掉重複、固定程式驗收與兩人互相檢查，共 6 步。</p></a>
-<a class="card" href="pages/smith/lmwbot-system-guide.html"><h2>3. LMWBOT 系統白話指南</h2><p>一般版、智慧版（總工頭自動帶小弟）與工程圖版的功能介紹與常見問答。</p></a>
+<a class="card" href="pages/smith/model-providers-live-benchmark.html"><h2>1. 五大 AI 比一比</h2><p>Claude、ChatGPT、Gemini、Grok 和本機小模型。看強項、要注意的地方，以及七種工作怎麼配。</p></a>
+<a class="card" href="pages/smith/agentic-dual-loop-playbook.html"><h2>2. 不要一直重複同一個錯誤</h2><p>做事的人不能自己打分數。切小塊，主力帶幫手，拿掉重複，用固定程式驗收，再換別人檢查。共 6 步。</p></a>
+<a class="card" href="pages/smith/lmwbot-system-guide.html"><h2>3. LMWBOT 系統白話指南</h2><p>一般版、智慧版（主力自動帶幫手）與工程圖版。功能介紹和常見問答。</p></a>
 </div>
 
 <section>
-<h2>五大 AI 模型陣營命令列速查表</h2>
+<h2>五大 AI 比一比</h2>
 <div class="table-scroll">
 <table>
-<thead><tr><th>模型陣營</th><th>最強的地方</th><th>最適合做什麼</th><th>踩坑提醒</th></tr></thead>
+<thead><tr><th>AI</th><th>最強的地方</th><th>最適合做什麼</th><th>要注意</th></tr></thead>
 <tbody>
-<tr><td><b>Anthropic Claude</b></td><td>能做的步驟最完整、可直接改檔與跑測試</td><td>架構重構、深度推理、兩人獨立互相檢查</td><td>多輪任務較久，記得設來回次數上限與逾時</td></tr>
-<tr><td><b>OpenAI GPT Codex</b></td><td>可在受限的保護環境裡執行，拆規格與找邊界問題很準</td><td>拆規格、找邊界漏洞、格式檢查</td><td>預設的保護環境可能不能改檔，寫檔前先確認權限</td></tr>
-<tr><td><b>Google Gemini</b></td><td>有免費額度、超長文章閱讀、內建搜尋</td><td>一次看很多檔案、上網查證、長文比對</td><td>同時發太多請求會被暫時拒絕，要自動等待再試</td></tr>
-<tr><td><b>xAI Grok</b></td><td>唯一能看到 X (Twitter) 的即時討論與開源消息</td><td>當頂層總指揮、抓第一手社群情報</td><td>額度珍貴，只做決策與情報，粗活交給小弟</td></tr>
-<tr><td><b>本地開源模型 (Ollama)</b></td><td>0 費用、斷網可用、資料留在自己電腦</td><td>先看一遍語法、遮掉私人資料、日常問題先分開處理</td><td>複雜系統細節較弱，重要結論要用程式再看一次</td></tr>
+<tr><td><b>Claude</b></td><td>能改檔，也能跑測試。</td><td>重做大結構、長篇推理。一個人做，另一個人檢查。</td><td>來回較久。要限制次數，也要設逾時。</td></tr>
+<tr><td><b>ChatGPT</b></td><td>能在受保護的環境裡跑。拆規格、找邊界很準。</td><td>拆規格、找漏洞、檢查格式。</td><td>預設可能不能改檔。改檔前先開權限。</td></tr>
+<tr><td><b>Gemini</b></td><td>有免費額度。能讀很長的文章，也能搜尋。</td><td>一次看很多檔、上網查、比長文。</td><td>問太多次會被暫時拒絕。要等一下再試。</td></tr>
+<tr><td><b>Grok</b></td><td>看得到 Twitter 的最新討論和開源消息。</td><td>抓消息，並做決定。</td><td>額度少。只做決定和情報，費力的工作交給別人。</td></tr>
+<tr><td><b>本機小模型</b></td><td>不花錢。沒網路也能用。資料留在自己電腦。</td><td>先看語法、遮私人資料、日常問題先分開處理。</td><td>複雜問題容易錯。重要結論要再檢查一次。</td></tr>
 </tbody>
 </table>
 </div>
 </section>
 
 <section>
-<h2>新增第 7 組：影音與短影音創作者（YouTube / Reels / Shorts / 動畫）</h2>
+<h2>第 7 種：做 YouTube、短片和動畫的人</h2>
 <div class="table-scroll">
 <table>
-<thead><tr><th>主力大腦</th><th>協同幫手</th><th>最後把關</th><th>為什麼這樣配</th></tr></thead>
+<thead><tr><th>主力</th><th>幫手</th><th>最後把關</th><th>為什麼這樣配</th></tr></thead>
 <tbody>
-<tr><td>Claude 分鏡總導演 ＋ Grok / Meta 社群話題</td><td>本地 Flux / Playwright 做開頭與結尾畫面 ＋ 互動式 AI 局部改圖與繁中無痕改字 ＋ Whisper / Edge-TTS 語音字幕 ＋ Veo / Sora 最後才用</td><td>FFmpeg 不另花費用，對好聲音和畫面、檢查音量與繁體字幕</td><td>生影片點數比文字貴：先用免費工具定稿分鏡與開頭結尾畫面，畫面有瑕疵就用互動式 AI 只改圈到的地方（圈外不改）、繁中標題改字不亂碼、橫圖一鍵變成直圖；檢查通過才開始做影片，連續兩輪不合格就停下來重寫，16:9 與 9:16 一起輸出。</td></tr>
+<tr>
+<td>Claude 負責拆鏡頭。<br>Grok 抓社群話題。</td>
+<td>本機畫開頭和結尾。<br>只改選到的地方，繁中改字。<br>自動字幕、配音。<br>付費影片留到最後。</td>
+<td>不另花錢。<br>對好聲音和畫面。<br>檢查音量和繁體字幕。</td>
+<td>做影片比寫字貴。<br>先用免費工具把鏡頭定下來。<br>畫面有問題，只改圈到的地方，其他地方不動。<br>繁中標題不要亂碼。橫圖可以變成直圖。<br>檢查過了才做影片。連續兩次不合格，就停下來重寫。<br>16:9 和 9:16 一起輸出。</td>
+</tr>
 </tbody>
 </table>
 </div>
-<p class="note">開頭與結尾畫面再升級：<b>點哪裡改哪裡</b>（點一下、框一塊、圈一圈，位置會進對話框，一句話同時改三處，圈外不改）、<b>一鍵拆開圖層</b>（底圖、主體、文字分開，標題拖著走還能改字）、<b>先在自己電腦出草稿</b>（先出草稿，檢查通過、滿意才花一次高清點數，重畫幅度鎖定、結果不亂變）。</p>
+<p class="note">開頭和結尾還可以再調。<br>點一下、框一塊，或圈一圈，就能指定位置。一句話可以同時改三處，其他地方不動。<br>圖可以拆開：底圖、主體、文字分開。標題拖走還能改字。<br>先在自己電腦出草稿。檢查通過、滿意了，才花一次高清。重畫幅度鎖住，結果不亂變。</p>
 </section>
 </main>
 <footer>BOT WIKI 公開知識庫｜繁體中文白話版</footer>
