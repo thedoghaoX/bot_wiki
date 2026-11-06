@@ -1,7 +1,7 @@
 /* 公開版視覺：預設淺色、圓角卡片、單欄不超過 960px。
    色彩對齊 shared/DESIGN.md。字型：Noto Sans CJK TC，備援 PingFang TC、Microsoft JhengHei。 */
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
   --bg: #f7f7f8;
   --card: #ffffff;
   --text: #1d1d1f;
@@ -16,7 +16,7 @@
 
 * { box-sizing: border-box; }
 
-html { color-scheme: light; }
+html { color-scheme: light dark; }
 
 body {
   margin: 0;
@@ -197,4 +197,30 @@ footer {
   table :is(th, td) { width: auto; }
 
   thead th { white-space: nowrap; }
+}
+
+.draft-badge {
+  background: #fff4d6;
+  color: #7a4a00;
+  border-bottom: 1px solid #f0d28a;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 6px 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161a;
+    --card: #1e2127;
+    --text: #ececf0;
+    --muted: #aab0bd;
+    --line: #333844;
+    --primary: #7aa7ff;
+    --thead: #262b36;
+    --shadow: none;
+  }
+  code { background: #2a2f3a; }
+  .tag { background: #26324d; color: #a9c4ff; }
+  .draft-badge { background: #3a2f12; color: #ffd98a; border-bottom-color: #5c4a1c; }
 }

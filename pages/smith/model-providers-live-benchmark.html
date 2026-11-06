@@ -7,49 +7,45 @@
 <link rel="stylesheet" href="../../shared/site.css">
 </head>
 <body>
+<div class="draft-badge" role="note">公開草稿｜主人審過才上線</div>
 <div class="wrap">
 <p><a href="../../index.html">← 回 BOT WIKI 首頁</a></p>
 <h1>五大 AI 比一比</h1>
-<p>各家 AI 接在同一套做法裡。下面是強項、要注意的地方，以及七種工作怎麼配。</p>
+<p>各家 AI 的特色、要注意的地方，以及七種工作怎麼選。</p>
 
 <section>
 <h2>一、五家 AI</h2>
 <div class="table-scroll">
 <table>
-<thead><tr><th>AI</th><th>代表</th><th>強項</th><th>要注意</th></tr></thead>
+<thead><tr><th>AI</th><th>特色</th><th>適合做什麼</th><th>要注意</th></tr></thead>
 <tbody>
-<tr><td><b>Claude</b></td><td>Claude</td><td><span class="tag">適合重做大結構</span><br>能改檔，也能跑測試。適合長篇推理。一個人做，另一個人檢查。</td><td>沒有人看著的時候，要限制來回次數。要它交出整理好的結果。檔案要真的存下來，不聽它自己說。</td></tr>
-<tr><td><b>ChatGPT</b></td><td>ChatGPT</td><td><span class="tag">適合拆規格、找漏洞</span><br>能把規格拆開。能找出邊界問題。能設計故意出錯的測試。</td><td>資料夾沒有版本紀錄時，要另外允許它執行。改檔前，先確認不是只能看、不能改。</td></tr>
-<tr><td><b>Gemini</b></td><td>Gemini</td><td><span class="tag">有免費額度，能讀長文</span><br>可以讀很長的文章。也能用 Google 搜尋查證。</td><td>問太多次會被暫時拒絕，要等一下再試。放在背景跑時，先準備好登入。</td></tr>
-<tr><td><b>Grok</b></td><td>Grok</td><td><span class="tag">適合抓最新消息</span><br>看得到 Twitter 的即時討論，以及新開源專案的消息。</td><td>額度少。用來做決定、抓消息。費力的工作交給其他 AI。</td></tr>
-<tr><td><b>本機小模型</b></td><td>本機小模型</td><td><span class="tag">不另花錢，資料留在自己電腦</span><br>完全免費。斷網也能用。私人資料不必上傳。</td><td>複雜細節容易答錯。只先看一遍、遮掉私人資料、先分開處理。重要判斷交給固定程式，或交給雲端 AI。</td></tr>
+<tr><td><b>Claude</b></td><td>寫文章、整理長資料、寫程式。</td><td>長篇推理、整理成一頁結論。</td><td>重要內容請自己再看一遍。</td></tr>
+<tr><td><b>ChatGPT</b></td><td>聊天、寫作、分析，使用的人很多。</td><td>拆需求、找漏洞、檢查格式。</td><td>重要內容請自己再看一遍。</td></tr>
+<tr><td><b>Gemini</b></td><td>能用 Google 搜尋查資料，也能讀較長的文章。</td><td>查資料、比對長文。</td><td>用得太頻繁可能被暫時限制，要等一下再試。</td></tr>
+<tr><td><b>Grok</b></td><td>可以參考 X 上公開的最新貼文。</td><td>看最新話題。</td><td>網路上的消息未必正確，要再查證。</td></tr>
+<tr><td><b>本機小模型</b></td><td>裝在自己電腦上，下載完成後沒網路也能用。資料留在自己電腦。</td><td>日常小問題、不想上傳的資料。</td><td>比大型雲端 AI 容易答錯。重要結論要再檢查。</td></tr>
 </tbody>
 </table>
 </div>
+<p class="note">依各家官方公開說明，2026-11-06 查核；規則會改，以官方最新說明為準。這是編輯整理的建議，不是官方排名，也沒有附實測分數。</p>
 </section>
 
 <section>
-<h2>二、七種工作怎麼配</h2>
+<h2>二、七種工作怎麼選</h2>
 <div class="table-scroll">
 <table>
-<thead><tr><th>你在做什麼</th><th>主力</th><th>幫手</th><th>最後把關</th><th>怎麼做</th></tr></thead>
+<thead><tr><th>你在做什麼</th><th>可以先用</th><th>再搭配</th><th>最後</th></tr></thead>
 <tbody>
-<tr><td><b>1. 做網站和系統</b></td><td>Claude</td><td>ChatGPT 和 Gemini</td><td>本機小模型，加上自動測試</td><td>Claude 拆開工作並設計結構。ChatGPT 補邊界測試。Gemini 看很多檔案。最後用免費程式驗收。</td></tr>
-<tr><td><b>2. 演算法和自動檢查</b></td><td>Claude（寫的人）</td><td>另一個 Claude（檢查的人）</td><td>固定的檢查程式</td><td>寫程式的人不能改答案。檢查的人另開一輪，只看改了什麼和圖。</td></tr>
-<tr><td><b>3. 產品和情報</b></td><td>Grok</td><td>Gemini</td><td>Claude</td><td>Grok 抓社群上的新消息。Gemini 查證背景。Claude 整理成一頁結論。</td></tr>
-<tr><td><b>4. 電腦維修</b></td><td>本機小模型</td><td>Claude</td><td>只允許看、不允許改</td><td>斷網時先在自己電腦分開處理，並遮掉私人紀錄。需要時，請 Claude 寫出「只看不改」的步驟。</td></tr>
-<tr><td><b>5. 資安和合規</b></td><td>Claude</td><td>ChatGPT</td><td>在自己電腦掃描</td><td>Claude 把規範寫成檢查規則。ChatGPT 造假資料，試規則有沒有洞。最後在自己電腦掃描，資料不外流。</td></tr>
-<tr><td><b>6. 自己做、預算少</b></td><td>Gemini 的免費額度</td><td>本機小模型</td><td>Claude，只處理最難的</td><td>免費和本機處理日常的查詢和小改。付費額度只花在最難的問題。</td></tr>
-<tr><td><b>7. YouTube、短片和動畫</b></td><td>Claude 拆鏡頭。<br>Grok 抓社群話題。</td><td>本機畫開頭和結尾。只改選到的地方。繁中改字。自動字幕和配音。付費影片留到最後。</td><td>不另花錢。對好聲音和畫面。檢查音量和繁體字幕。</td><td>做影片比寫字貴。先用免費工具定稿。畫面有問題，只改圈到的地方，其他地方不動。繁中標題不要亂碼。橫圖可以變成直圖。檢查過了才做影片。16:9 和 9:16 一起輸出。</td></tr>
+<tr><td><b>1. 做網站和系統</b></td><td>Claude</td><td>ChatGPT、Gemini</td><td>跑自動測試</td></tr>
+<tr><td><b>2. 演算法和自動檢查</b></td><td>Claude</td><td>換另一個 AI 檢查</td><td>用固定的檢查程式</td></tr>
+<tr><td><b>3. 產品和情報</b></td><td>Grok 看話題</td><td>Gemini 查證</td><td>Claude 整理成一頁</td></tr>
+<tr><td><b>4. 電腦維修</b></td><td>本機小模型</td><td>Claude</td><td>只看不改，改之前先問你</td></tr>
+<tr><td><b>5. 資安和合規</b></td><td>Claude</td><td>ChatGPT</td><td>在自己電腦上檢查</td></tr>
+<tr><td><b>6. 自己做、預算少</b></td><td>Gemini 免費方案</td><td>本機小模型</td><td>難的問題再用付費的</td></tr>
+<tr><td><b>7. YouTube、短片和動畫</b></td><td>Claude 想分鏡，Grok 看話題</td><td>免費工具做草稿</td><td>檢查字幕和聲音，滿意了再做高畫質</td></tr>
 </tbody>
 </table>
 </div>
-<p>開頭和結尾還可以再調。<br>點一下、框一塊，或圈一圈，就能指定位置。一句話可以同時改三處，其他地方不動。<br>圖可以拆開：底圖、主體、文字分開。標題拖走還能改字。<br>先在自己電腦出草稿。檢查通過、滿意了，才花一次高清。重畫幅度鎖住，結果不亂變。</p>
-</section>
-
-<section>
-<h2>三、同一套做法，三種情況</h2>
-<p>先檢查，再正式做。<br><span class="tag">一般人</span> 辦公時省錢，也避免做錯。<br><span class="tag">工程師</span> 把工作直接交出去，拿掉重複的。兩輪沒進展就停。<br><span class="tag">做影片的人</span> 先找話題，再拆成一段一段。腳本、畫面、語音一起做。不另花錢檢查成片。16:9 和 9:16 一起輸出。</p>
 </section>
 </div>
 </body>

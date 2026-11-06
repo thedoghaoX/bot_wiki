@@ -8,22 +8,9 @@
       "category": "模型評測",
       "author": "smith",
       "visibility": "公開",
-      "canvas": "pages/smith/model_providers_live_benchmark.canvas.tsx",
+      "canvas": null,
       "html": "pages/smith/model-providers-live-benchmark.html",
       "data": [
-        "shared/model_providers_benchmark.json"
-      ]
-    },
-    {
-      "id": "bot-wiki-hub",
-      "title": "知識庫總覽",
-      "category": "知識庫索引",
-      "author": "smith",
-      "visibility": "內部",
-      "canvas": "pages/smith/bot_wiki_hub.canvas.tsx",
-      "html": null,
-      "data": [
-        "shared/os_coverage_summary.json",
         "shared/model_providers_benchmark.json"
       ]
     }
